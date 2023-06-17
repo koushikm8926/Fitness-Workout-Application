@@ -43,11 +43,11 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     container:{
-        // paddingTop:Platform.OS==="android" ? 45:0,
+        paddingTop:Platform.OS==="android" ? 35:0,
         height:200,
         backgroundColor:'#CD853F',
         padding:10,
         width:"100%",
-        marginBottom:58,
+        marginBottom:80,
     }
 })
