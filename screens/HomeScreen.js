@@ -1,5 +1,6 @@
-import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Platform, SafeAreaView, StyleSheet, Text, View,Image , ScrollView} from 'react-native'
 import React from 'react'
+import FitnessCards from '../components/FitnessCards'
 
 const HomeScreen = () => {
   return (
@@ -22,6 +23,16 @@ const HomeScreen = () => {
                     <Text style={{marginTop:6, color:'#D0D0D0', fontSize:17,}}>MINS</Text>
                 </View>
             </View>
+
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+                <Image
+                    style={{ width: "90%", height: 120, marginTop: 20, borderRadius: 7 }}
+                    source={{
+                    uri: "https://cdn-images.cure.fit/www-curefit-com/image/upload/c_fill,w_842,ar_1.2,q_auto:eco,dpr_2,f_auto,fl_progressive/image/test/sku-card-widget/gold2.png",
+                    }}
+                />
+            </View>
+                    <FitnessCards/>
         </View>
     </SafeAreaView>
   )
