@@ -3,6 +3,7 @@ import React from 'react'
 import FitnessCards from '../components/FitnessCards'
 
 const HomeScreen = () => {
+    
   return (
     <ScrollView>
         <View style={styles.container}>
@@ -42,11 +43,11 @@ export default HomeScreen
 
 const styles = StyleSheet.create({
     container:{
-        paddingTop:Platform.OS==="android" ? 45:0,
+        // paddingTop:Platform.OS==="android" ? 45:0,
         height:200,
         backgroundColor:'#CD853F',
         padding:10,
         width:"100%",
-        marginBottom:90,
+        marginBottom:58,
     }
 })
