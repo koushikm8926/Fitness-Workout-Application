@@ -11,7 +11,10 @@ const FitnessCards = () => {
     <View>
       {FitnessData.map((item, key) => (
         <Pressable
-        onPress={()=>navigation.navigate("Workout")}
+        onPress={()=>navigation.navigate("Workout", {
+          image:item.image,
+          excersises:item.excersises,
+        })}
           key={key}
           style={{ justifyContent: "center", alignItems: "center", margin: 10 }}
         >
