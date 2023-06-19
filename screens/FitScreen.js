@@ -128,7 +128,12 @@ const FitScreen = () => {
             Prev
           </Text>
         </Pressable>
-        <Pressable
+        {index+1 >= excersise.length? (
+          <Pressable
+          onPress={() => {
+          navigation.navigate("Home");
+        
+        }}
           style={{
             backgroundColor: "green",
             padding: 10,
@@ -143,6 +148,24 @@ const FitScreen = () => {
             Skip
           </Text>
         </Pressable>
+        ):(
+          <Pressable
+          style={{
+            backgroundColor: "green",
+            padding: 10,
+            borderRadius: 20,
+            marginHorizontal: 20,
+            width: 120,
+          }}
+        >
+          <Text
+            style={{ color: "white", fontWeight: "bold", textAlign: "center" }}
+          >
+            Skip
+          </Text>
+        </Pressable>
+        )}
+       
       </Pressable>
     </SafeAreaView>
   );
