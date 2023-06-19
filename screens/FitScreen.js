@@ -46,64 +46,63 @@ const FitScreen = () => {
       >
         X{current.sets}
       </Text>
-{index+1>= excersise.length?(
-  <Pressable
-        onPress={() => {
-          navigation.navigate("Home");
-        
-        }}
-        style={{
-          backgroundColor: "blue",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: 20,
-          borderRadius: 25,
-          padding: 10,
-          width: 250,
-        }}
-      >
-        <Text
+      {index + 1 >= excersise.length ? (
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
           style={{
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: 20,
-            color: "white",
+            backgroundColor: "blue",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: 20,
+            borderRadius: 25,
+            padding: 10,
+            width: 250,
           }}
         >
-          Done
-        </Text>
-      </Pressable>
-):(
-  <Pressable
-        onPress={() => {
-          navigation.navigate("Rest");
-          setTimeout(() => {
-            setIndex(index + 1);
-          }, 2000);
-        }}
-        style={{
-          backgroundColor: "blue",
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginTop: 20,
-          borderRadius: 25,
-          padding: 10,
-          width: 250,
-        }}
-      >
-        <Text
+          <Text
+            style={{
+              textAlign: "center",
+              fontWeight: "bold",
+              fontSize: 20,
+              color: "white",
+            }}
+          >
+            Done
+          </Text>
+        </Pressable>
+      ) : (
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Rest");
+            setTimeout(() => {
+              setIndex(index + 1);
+            }, 2000);
+          }}
           style={{
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: 20,
-            color: "white",
+            backgroundColor: "blue",
+            marginLeft: "auto",
+            marginRight: "auto",
+            marginTop: 20,
+            borderRadius: 25,
+            padding: 10,
+            width: 250,
           }}
         >
-          Done
-        </Text>
-      </Pressable>
-)}
-    
+          <Text
+            style={{
+              textAlign: "center",
+              fontWeight: "bold",
+              fontSize: 20,
+              color: "white",
+            }}
+          >
+            Done
+          </Text>
+        </Pressable>
+      )}
+
       <Pressable
         style={{
           flexDirection: "row",
@@ -128,12 +127,11 @@ const FitScreen = () => {
             Prev
           </Text>
         </Pressable>
-        {index+1 >= excersise.length? (
-          <Pressable
-          onPress={() => {
-          navigation.navigate("Home");
-        
-        }}
+{index + 1 >= excersise.length ? (
+  <Pressable
+    onPress={() => {
+            navigation.navigate("Home");
+          }}
           style={{
             backgroundColor: "green",
             padding: 10,
@@ -148,8 +146,14 @@ const FitScreen = () => {
             Skip
           </Text>
         </Pressable>
-        ):(
-          <Pressable
+):(
+  <Pressable
+   onPress={() => {
+            navigation.navigate("Rest");
+            setTimeout(() => {
+              setIndex(index + 1);
+            }, 2000);
+          }}
           style={{
             backgroundColor: "green",
             padding: 10,
@@ -164,7 +168,7 @@ const FitScreen = () => {
             Skip
           </Text>
         </Pressable>
-        )}
+)}
        
       </Pressable>
     </SafeAreaView>
