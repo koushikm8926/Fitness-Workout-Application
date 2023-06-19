@@ -8,9 +8,10 @@ import {
   Pressable,
 } from "react-native";
 import React, { useState } from "react";
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 const FitScreen = () => {
+  const navigation=useNavigation();
   const route = useRoute();
   console.log(route.params);
   const [index, setIndex] = useState(0);
@@ -46,7 +47,9 @@ const FitScreen = () => {
         X{current.sets}
       </Text>
 
-      <Pressable style={{
+      <Pressable 
+      onPress={()=> navigation.navigate("Rest")}
+      style={{
         backgroundColor:'blue',
         marginLeft:'auto',
         marginRight:'auto', 
