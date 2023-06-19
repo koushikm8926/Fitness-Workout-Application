@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import { useNavigation, useRoute } from "@react-navigation/native";
 
 const FitScreen = () => {
-  const navigation=useNavigation();
+  const navigation = useNavigation();
   const route = useRoute();
   console.log(route.params);
   const [index, setIndex] = useState(0);
@@ -47,18 +47,36 @@ const FitScreen = () => {
         X{current.sets}
       </Text>
 
-      <Pressable 
-      onPress={()=> navigation.navigate("Rest")}
-      style={{
-        backgroundColor:'blue',
-        marginLeft:'auto',
-        marginRight:'auto', 
-        marginTop:20, 
-        borderRadius:25,
-        padding:10,
-        width:250,
-      }}>
-        <Text style={{textAlign:'center', fontWeight:'bold', fontSize:20, color:'white'}}>Done</Text>
+      <Pressable
+        onPress={() => {
+        navigation.navigate("Rest")
+        setTimeout(()=>{
+            setIndex(index+1)
+        }, 2000)
+
+
+        }
+        }
+        style={{
+          backgroundColor: "blue",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: 20,
+          borderRadius: 25,
+          padding: 10,
+          width: 250,
+        }}
+      >
+        <Text
+          style={{
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: 20,
+            color: "white",
+          }}
+        >
+          Done
+        </Text>
       </Pressable>
     </SafeAreaView>
   );
