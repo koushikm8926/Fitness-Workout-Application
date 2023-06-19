@@ -46,17 +46,12 @@ const FitScreen = () => {
       >
         X{current.sets}
       </Text>
-
-      <Pressable
+{index+1>= excersise.length?(
+  <Pressable
         onPress={() => {
-        navigation.navigate("Rest")
-        setTimeout(()=>{
-            setIndex(index+1)
-        }, 2000)
-
-
-        }
-        }
+          navigation.navigate("Home");
+        
+        }}
         style={{
           backgroundColor: "blue",
           marginLeft: "auto",
@@ -77,6 +72,77 @@ const FitScreen = () => {
         >
           Done
         </Text>
+      </Pressable>
+):(
+  <Pressable
+        onPress={() => {
+          navigation.navigate("Rest");
+          setTimeout(() => {
+            setIndex(index + 1);
+          }, 2000);
+        }}
+        style={{
+          backgroundColor: "blue",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: 20,
+          borderRadius: 25,
+          padding: 10,
+          width: 250,
+        }}
+      >
+        <Text
+          style={{
+            textAlign: "center",
+            fontWeight: "bold",
+            fontSize: 20,
+            color: "white",
+          }}
+        >
+          Done
+        </Text>
+      </Pressable>
+)}
+    
+      <Pressable
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          marginLeft: "auto",
+          marginRight: "auto",
+          marginTop: 50,
+        }}
+      >
+        <Pressable
+          style={{
+            backgroundColor: "green",
+            padding: 10,
+            borderRadius: 20,
+            marginHorizontal: 20,
+            width: 120,
+          }}
+        >
+          <Text
+            style={{ color: "white", fontWeight: "bold", textAlign: "center" }}
+          >
+            Prev
+          </Text>
+        </Pressable>
+        <Pressable
+          style={{
+            backgroundColor: "green",
+            padding: 10,
+            borderRadius: 20,
+            marginHorizontal: 20,
+            width: 120,
+          }}
+        >
+          <Text
+            style={{ color: "white", fontWeight: "bold", textAlign: "center" }}
+          >
+            Skip
+          </Text>
+        </Pressable>
       </Pressable>
     </SafeAreaView>
   );
