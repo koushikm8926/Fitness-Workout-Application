@@ -52,7 +52,7 @@ const WorkoutScreen = () => {
               </Text>
             </View>
             {completed.includes(item.name)? (
-              <AntDesign name="checkcircle" size={24} color="green" />
+              <AntDesign name="checkcircle" size={24} color="green"  style={{marginLeft:40,}} />
             ):(
               null
             )}
@@ -60,9 +60,12 @@ const WorkoutScreen = () => {
         ))}
       </ScrollView>
       <Pressable
-      onPress={()=>navigation.navigate("Fit", {
+      onPress={()=>{
+        navigation.navigate("Fit", {
         excersises:route.params.excersises,
-      })}
+      })
+      setCompleted([]);
+      }}
         style={{
           marginLeft: "auto",
           marginRight: "auto",
